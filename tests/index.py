@@ -11,30 +11,25 @@ class Ysj_test():
     self.driver.implicitly_wait(5)
 
   def navigation_test(self):
-    home = self.driver.find_element_by_link_text("Home")
-    home.click()
-    time.sleep(2)
+    navigation_list = ["Home", "Menu", "Location"]
 
-    menu = self.driver.find_element_by_link_text("Menu")
-    menu.click()
-    time.sleep(2)
-
-    location = self.driver.find_element_by_link_text("Location")
-    location.click()
-    time.sleep(2)
+    for item in navigation_list:
+      link = self.driver.find_element_by_link_text(item)
+      link.click()
+      time.sleep(2)
 
     about = self.driver.find_element_by_id("about")
     about.click()
     time.sleep(2)
 
   def menu_test(self):
-    menuList = ["beef", "chicken", "pork", "goat", "seafood", "dairy", "vegetarian", "rice", "noodle", "all"]
+    menu_list = ["beef", "chicken", "pork", "goat", "seafood", "dairy", "vegetarian", "rice", "noodle", "all"]
 
     menu = self.driver.find_element_by_link_text("Menu")
     menu.click()
     time.sleep(2)
 
-    for item in menuList:
+    for item in menu_list:
       link = self.driver.find_element_by_id(item)
       link.click()
       time.sleep(2)
