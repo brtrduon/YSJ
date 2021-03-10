@@ -27,9 +27,22 @@ class Ysj_test():
     about.click()
     time.sleep(2)
 
+  def menu_test(self):
+    menuList = ["beef", "chicken", "pork", "goat", "seafood", "dairy", "vegetarian", "rice", "noodle", "all"]
+
+    menu = self.driver.find_element_by_link_text("Menu")
+    menu.click()
+    time.sleep(2)
+
+    for item in menuList:
+      link = self.driver.find_element_by_id(item)
+      link.click()
+      time.sleep(2)
+
   def close(self):
     self.driver.close()
 
 ff = Ysj_test()
 ff.navigation_test()
+ff.menu_test()
 ff.close()
